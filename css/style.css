@@ -1,0 +1,363 @@
+/* Общий формат текста */
+body {
+    font-family: "Ubuntu", sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+/* Логотип и заголовок */
+.main-logo {
+    display: block;
+    margin-top: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 40px;
+}
+
+h1 {
+    color: #004f9f;
+    text-transform: uppercase;
+    text-align: center;
+    margin: 0;
+    margin-bottom: 50px;
+}
+
+/* Отступ внизу секций */
+section {
+    margin: 0;
+    margin-bottom: 100px;
+}
+
+/* Заголовки */
+h2 {
+    width: 100%;
+    text-align: center;
+    color: #004f9f;
+    text-transform: uppercase;
+    padding: 0;
+    margin-top: 0;
+    margin-bottom: 40px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Превращение всех контейнеров с таблицами во флекс-контейнеры */
+.groups-container, .group-stage-container, .last-16-container, .quarter-finals-container, .semi-finals-container, .finals-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.groups-container, .group-stage-container {
+    justify-content: space-evenly;
+}
+
+/* ГРУППОВОЙ ЭТАП */
+/* Верстка табЛиц с группами */
+.groups-container table {
+    border-radius: 10%;
+    background-color: #004f9f;
+    color: #fff;
+    border-collapse: collapse;
+    box-shadow: 0 0 60px 5px #c767f4;
+}
+
+.groups-container caption {
+    color: black;
+    text-align: left;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding-left: 15px;
+    padding-bottom: 5px;
+}
+
+/* Задание ширины столбцов */
+.groups-container .team {
+    width: 120px;
+    padding: 5px;
+    padding-bottom: 0;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.groups-container .played, .groups-container .goals, .groups-container .points {
+    font-size: 0.7rem;
+    width: 20px;
+    padding: 5px;
+    padding-bottom: 0;
+    padding-right: 15px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.groups-container .country {
+    text-align: center;
+    vertical-align: middle;
+}
+
+.groups-container tr:last-child td {
+    padding-bottom: 20px;
+}
+
+/* Форматирование ячеек */
+/* .groups-container tbody td {
+    font-size: 0.95rem;
+    font-weight: 300;
+    padding: 5px 20px;
+} */
+
+.groups-container .country {
+    text-align: left;
+    vertical-align: middle;
+    font-size: 0.95rem;
+    font-weight: 300;
+    padding: 5px 20px;
+}
+
+.groups-container .played-team, .groups-container .goals-team, .groups-container .points-team {
+    font-size: 0.7rem;
+    width: 20px;
+    padding: 5px;
+    padding-right: 15px;
+    padding-bottom: 0;
+    text-align: center;
+    vertical-align: middle;
+}
+
+/* МАТЧИ ГРУППОВОГО ЭТАПА */
+/* отступы слева и справа от контейнера с матчами */
+.group-stage-container {
+    margin: 0;
+    margin-left: 60px;
+    margin-right: 60px;
+}
+
+/* Форматирование внешнего вида таблиц с матчами */
+.group-stage-container .match {
+    font-size: 0.75rem;
+    border: 1px solid #004f9f;
+    border-collapse: collapse;
+    margin: 10px;
+}
+
+/* Стилизация первой строки */
+
+.group-stage-container .match thead {
+    background-color: #004f9f;
+    color: #fff;
+}
+
+.group-stage-container .group {
+    text-align: left;
+    font-size: 0.75rem;
+    font-weight: normal;
+    width: 170px;
+    padding: 5px;
+}
+
+.group-stage-container .date {
+    text-align: right;
+    font-size: 0.75rem;
+    font-weight: normal;
+    width: 170px;
+    padding: 5px;
+}
+
+/* Отступы у ячеек */
+.group-stage-container .match td {
+padding: 5px;
+}
+
+/* Распределение ширины ячеек и расположения текста */
+.group-stage-container .match td:first-child {
+    width: 120px;
+}
+
+.group-stage-container .match td:nth-child(2) {
+    text-align: right;
+}
+
+.group-stage-container .match td:last-child {
+    width: 120px;
+    text-align: right;
+}
+
+/* Стилизация формы */
+.group-stage-container .match input {
+    width: 20px;
+    height: 20px;
+    border: 1px solid #004f9f;
+    font-family: "Ubuntu", sans-serif;
+    font-size: 0.9rem;
+    font-weight: bold;
+    text-align: center;
+}
+
+/* 1/16 ФИНАЛА */
+/* Отступы контейнера матчей */
+.last-16-container {
+    margin-left: 40px;
+    margin-right: 40px;
+    justify-content: space-between;
+}
+
+/* Стилизация таблицы */
+.last-16-container .match {
+    font-size: 0.9rem;
+    border-collapse: collapse;
+    margin: 10px;
+}
+
+.last-16-container thead th {
+    border-radius: 10px;
+    background-color: goldenrod;
+    padding: 8px;
+}
+
+.last-16-container .sixteen-team {
+    width: 120px;
+    padding: 6px;
+}
+
+/* Граница, разделяющая комманды */
+.last-16-container tbody tr:first-child td {
+    border-bottom: 1px solid goldenrod;
+}
+
+/* Отступы в ячейке с результатами матча */
+.last-16-container .sixteen-team + td {
+    padding: 8px;
+}
+
+/* Стилизация формы */
+.last-16-container input {
+    width: 20px;
+    height: 20px;
+    border: 1px solid goldenrod;
+    font-family: "Ubuntu", sans-serif;
+    font-size: 0.9rem;
+    font-weight: bold;
+    text-align: center;
+}
+
+/* ЧЕТВЕРТЬ-ФИНАЛ */
+/* Стилизация флекс-контейнера */
+.quarter-finals-container {
+    justify-content: center;
+    column-gap: 15px;
+}
+
+/* Стилизация таблицы */
+.quarter-finals-container .match {
+    font-size: 0.9rem;
+    border-collapse: separate;
+    border-spacing: 5px;
+    margin: 10px;
+}
+
+.quarter-finals-container thead th {
+    border-radius: 10px;
+    background-color: goldenrod;
+    padding: 8px;
+}
+
+.quarter-finals-container td:first-child, .quarter-finals-container td:last-child {
+    width: 120px;
+    padding: 6px;
+}
+
+.quarter-finals-container td:last-child {
+    text-align: right;
+}
+
+/* Стилизация формы */
+.quarter-finals-container input {
+    width: 20px;
+    height: 20px;
+    border: 1px solid goldenrod;
+    font-family: "Ubuntu", sans-serif;
+    font-size: 0.9rem;
+    font-weight: bold;
+    text-align: center;
+}
+
+/* ПОЛУ-ФИНАЛ */
+/* Стилизация флекс-контейнера */
+.semi-finals-container {
+    justify-content: center;
+    column-gap: 15px;
+}
+
+/* Стилизация таблицы */
+.semi-finals-container .match {
+    font-size: 0.9rem;
+    border-collapse: separate;
+    border-spacing: 5px;
+    margin: 10px;
+}
+
+.semi-finals-container thead th {
+    border-radius: 10px;
+    background-color: goldenrod;
+    padding: 8px;
+}
+
+.semi-finals-container td:first-child, .semi-finals-container td:last-child {
+    width: 150px;
+    padding: 6px;
+}
+
+.semi-finals-container td:last-child {
+    text-align: right;
+}
+
+/* Стилизация формы */
+.semi-finals-container input {
+    width: 20px;
+    height: 20px;
+    border: 1px solid goldenrod;
+    font-family: "Ubuntu", sans-serif;
+    font-size: 0.9rem;
+    font-weight: bold;
+    text-align: center;
+}
+
+/* ФИНАЛ */
+/* Стилизация флекс-контейнера */
+.finals-container {
+    justify-content: center;
+    column-gap: 15px;
+}
+
+/* Стилизация таблицы */
+.finals-container .match {
+    font-size: 0.9rem;
+    border-collapse: separate;
+    border-spacing: 5px;
+    margin: 10px;
+}
+
+.finals-container thead th {
+    border-radius: 10px;
+    background-color: goldenrod;
+    padding: 8px;
+}
+
+.finals-container td:first-child, .finals-container td:last-child {
+    width: 200px;
+    padding: 6px;
+}
+
+.finals-container td:last-child {
+    text-align: right;
+}
+
+/* Стилизация формы */
+.finals-container input {
+    width: 20px;
+    height: 20px;
+    border: 1px solid goldenrod;
+    font-family: "Ubuntu", sans-serif;
+    font-size: 0.9rem;
+    font-weight: bold;
+    text-align: center;
+}
